@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  template: template0
+  username: username
+  password: password
+  host: localhost
+  port: 5432
+  pool: 5
+
+development:
+  <<: *default
+  database: balota_development
+
+test:
+  <<: *default
+  database: balota_test
+
+production:
+  <<: *default
+  database: balota_2016
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
