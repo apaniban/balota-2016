@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160413031031) do
+ActiveRecord::Schema.define(version: 20160413033304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "party_lists", force: :cascade do |t|
+    t.string   "name"
+    t.string   "acronym"
+    t.integer  "ballot_number"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "party_lists", ["ballot_number"], name: "index_party_lists_on_ballot_number", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
