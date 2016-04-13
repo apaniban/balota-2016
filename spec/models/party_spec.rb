@@ -8,5 +8,6 @@ RSpec.describe Party, type: :model do
 
   context 'relationships' do
     it { should have_many :presidents }
+    it { should have_many :vice_presidents }
   end
 end
