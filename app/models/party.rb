@@ -4,4 +4,5 @@ class Party < ActiveRecord::Base
 
   has_many :presidents
   has_many :vice_presidents
+  has_many :senators
 end
