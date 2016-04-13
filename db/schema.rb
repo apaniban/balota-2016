@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160413041313) do
+ActiveRecord::Schema.define(version: 20160413042218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20160413041313) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
+
+  create_table "checklists_senators", id: false, force: :cascade do |t|
+    t.integer "checklist_id"
+    t.integer "senator_id"
+  end
+
+  add_index "checklists_senators", ["checklist_id"], name: "index_checklists_senators_on_checklist_id", using: :btree
+  add_index "checklists_senators", ["senator_id"], name: "index_checklists_senators_on_senator_id", using: :btree
 
   create_table "parties", force: :cascade do |t|
     t.string   "name"

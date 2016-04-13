@@ -14,5 +14,6 @@ RSpec.describe Senator, type: :model do
 
   context 'relationships' do
     it { should belong_to :party }
+    it { should have_and_belong_to_many :checklists }
   end
 end

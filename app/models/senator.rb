@@ -5,4 +5,5 @@ class Senator < ActiveRecord::Base
     numericality: { only_integer: true, greater_than: 0 }
 
   belongs_to :party
+  has_and_belongs_to_many :checklists
 end
