@@ -14,5 +14,6 @@ RSpec.describe President, type: :model do
 
   context 'relationships' do
     it { should belong_to :party }
+    it { should have_many :checklists }
   end
 end

@@ -5,4 +5,5 @@ class VicePresident < ActiveRecord::Base
     numericality: { only_integer: true, greater_than: 0 }
 
   belongs_to :party
+  has_many :checklists
 end
