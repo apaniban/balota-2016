@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Admin: Balota 2016
+    = stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .container-fluid
+      .row
+        .col-md-2
+          = render 'shared/admin/sidebar'
+        .col-md-10
+          = yield
+
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true

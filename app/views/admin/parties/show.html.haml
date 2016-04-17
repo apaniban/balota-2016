@@ -1,0 +1,6 @@
+%h2 #{@party.name}
+%h3 #{@party.acronym}
+
+= link_to 'Back', admin_parties_path
+= link_to 'Edit', edit_admin_party_path(@party)
+= link_to 'Delete', admin_party_path(@party), data: {confirm: "Are you sure you want to delete #{@party.name}?"}, method: :delete
