@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'parties#index'
     resources :parties
+    resources :party_lists
   end
 end

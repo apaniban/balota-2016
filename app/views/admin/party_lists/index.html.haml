@@ -1,0 +1,4 @@
+%ul
+  = render partial: 'party_list', collection: @party_lists, as: :party_list
+
+= link_to 'Create new party list', new_admin_party_list_path
