@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :parties
     resources :party_lists
     resources :senators
+    resources :vice_presidents
   end
 end

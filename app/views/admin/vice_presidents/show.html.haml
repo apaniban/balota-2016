@@ -1,0 +1,8 @@
+%h2 #{@vice_president.name}
+%h3 #{@vice_president.ballot_name}
+%h3 #{@vice_president.ballot_number}
+%h3 #{@vice_president.party.name }
+
+= link_to 'Back', admin_vice_presidents_path
+= link_to 'Edit', edit_admin_vice_president_path(@vice_president)
+= link_to 'Delete', admin_vice_president_path(@vice_president), data: {confirm: "Are you sure you want to delete #{@vice_president.name}?"}, method: :delete
