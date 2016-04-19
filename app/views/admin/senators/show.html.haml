@@ -1,0 +1,8 @@
+%h2 #{@senator.name}
+%h3 #{@senator.ballot_name}
+%h3 #{@senator.ballot_number}
+%h3 #{@senator.party.name }
+
+= link_to 'Back', admin_senators_path
+= link_to 'Edit', edit_admin_senator_path(@senator)
+= link_to 'Delete', admin_senator_path(@senator), data: {confirm: "Are you sure you want to delete #{@senator.name}?"}, method: :delete

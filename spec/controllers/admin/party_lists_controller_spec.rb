@@ -60,13 +60,13 @@ RSpec.describe Admin::PartyListsController, type: :controller do
 
   describe 'GET edit party_list' do
     it 'assigns @party_list' do
-      get :edit, id: party_list.id, party_list: { name: 'new name' }
+      get :edit, id: party_list.id
 
       expect(assigns(:party_list)).to eq party_list
     end
 
     it 'renders edit template' do
-      get :edit, id: party_list.id, party_list: { name: 'new name' }
+      get :edit, id: party_list.id
 
       expect(response).to render_template(:edit)
     end

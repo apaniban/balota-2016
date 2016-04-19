@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     root 'parties#index'
     resources :parties
     resources :party_lists
+    resources :senators
   end
 end
