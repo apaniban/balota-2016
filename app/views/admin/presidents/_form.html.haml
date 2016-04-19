@@ -1,0 +1,19 @@
+= form_for [:admin, @president] do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control'
+
+  .form-group
+    = f.label :ballot_name
+    = f.text_field :ballot_name, class: 'form-control'
+
+  .form-group
+    = f.label :ballot_number
+    = f.text_field :ballot_number, class: 'form-control'
+
+  .form-group
+    = f.label :party_id, 'Party'
+    = f.select :party_id, options_from_collection_for_select(@parties, :id, :name), {}, class: 'form-control'
+
+  .form-group
+    = f.submit class: 'btn btn-primary form-control'

@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'parties#index'
+    resources :presidents
+    resources :vice_presidents
     resources :parties
     resources :party_lists
     resources :senators
-    resources :vice_presidents
   end
 end

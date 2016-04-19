@@ -1,0 +1,8 @@
+%h2 #{@president.name}
+%h3 #{@president.ballot_name}
+%h3 #{@president.ballot_number}
+%h3 #{@president.party.name }
+
+= link_to 'Back', admin_presidents_path
+= link_to 'Edit', edit_admin_president_path(@president)
+= link_to 'Delete', admin_president_path(@president), data: {confirm: "Are you sure you want to delete #{@president.name}?"}, method: :delete
