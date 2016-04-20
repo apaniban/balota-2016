@@ -3,8 +3,12 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Balota 2016
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = yield
+    = render 'shared/navbar'
+    .container-fluid
+      .row
+        = yield
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
