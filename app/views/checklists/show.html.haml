@@ -1,0 +1,8 @@
+%h2 President: #{@checklist.president.ballot_name}
+%h2 Vice President: #{@checklist.vice_president.ballot_name}
+
+%h3 Senators
+- @checklist.senators.each do |senator|
+  #{senator.ballot_name}
+
+%h3 Partylist: #{@checklist.party_list.name}

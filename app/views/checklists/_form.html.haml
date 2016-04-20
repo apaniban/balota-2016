@@ -1,0 +1,20 @@
+= form_for @checklist do |f|
+  .form-group
+    = f.label :president_id, 'President'
+    = f.collection_radio_buttons :president_id, @presidents, :id, :name
+
+  .form-group
+    = f.label :vice_president_id, 'Vice President'
+    = f.collection_radio_buttons :vice_president_id, @vice_presidents, :id, :name
+
+  .form-group
+    = f.label :senator_ids, 'Senators'
+    = f.collection_select :senator_ids, @senators, :id, :name, {}, {multiple: true}
+
+  .form-group
+    = f.label :party_list_id, 'Party List'
+    = f.collection_radio_buttons :party_list_id, @party_lists, :id, :name
+
+  .form-group
+    = f.submit 'Save checklist', class: 'btn btn-primary form-control'
+
