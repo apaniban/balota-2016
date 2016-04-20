@@ -9,7 +9,7 @@
 
   .form-group
     = f.label :senator_ids, 'Senators'
-    = f.collection_select :senator_ids, @senators, :id, :name, {}, {multiple: true}
+    = f.collection_check_boxes :senator_ids, @senators, :id, :name
 
   .form-group
     = f.label :party_list_id, 'Party List'
