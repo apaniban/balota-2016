@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Admin::SenatorsController, type: :controller do
+  login_admin
+
   let!(:party) { FactoryGirl.create(:party) }
   let!(:senator) { FactoryGirl.create(:senator, party: party) }
 
@@ -41,7 +43,7 @@ RSpec.describe Admin::SenatorsController, type: :controller do
   end
 
   describe 'POST senator' do
-    it 'creates @party' do
+    it 'creates @senator' do
       name = FFaker::Name.name
       ballot_name = FFaker::Name.name
       ballot_number = Random.rand(1..100)

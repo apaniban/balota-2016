@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Admin::PresidentsController, type: :controller do
+  login_admin
+
   let!(:party) { FactoryGirl.create(:party) }
   let!(:president) { FactoryGirl.create(:president, party: party) }
 

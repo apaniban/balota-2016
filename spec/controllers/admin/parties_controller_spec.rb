@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Admin::PartiesController, type: :controller do
+  login_admin
+
   let!(:party) { FactoryGirl.create(:party) }
 
   describe 'GET parties' do

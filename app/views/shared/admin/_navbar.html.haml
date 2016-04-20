@@ -1,0 +1,12 @@
+%nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      .navbar-brand
+        Balota 2016
+    %ul.nav.navbar-nav.navbar-right
+      %li= link_to 'Back to Site', '#'
+      %li
+        - if admin_signed_in?
+          = link_to 'Logout', destroy_admin_session_path, method: :delete
+        - else
+          = link_to 'Login', new_admin_session_path
