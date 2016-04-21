@@ -1,10 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe ChecklistsController, type: :routing do
-  it { expect(get('/checklists')).to route_to('checklists#index') }
-  it { expect(get('/checklists/1')).to route_to('checklists#show', id: '1') }
-  it { expect(get('/checklists/new')).to route_to('checklists#new') }
-  it { expect(post('/checklists')).to route_to('checklists#create') }
-  it { expect(get('/checklists/1/edit')).to route_to('checklists#edit', id: '1') }
-  it { expect(put('/checklists/1')).to route_to('checklists#update', id: '1') }
+  it { expect(get('/checklist')).to route_to('checklists#show') }
+  it { expect(get('/checklist/edit')).to route_to('checklists#edit') }
+  it { expect(put('/checklist')).to route_to('checklists#update') }
+
+  it { expect(get('/checklist/new')).to_not be_routable }
+  it { expect(post('/checklist')).to_not be_routable }
+  it { expect(delete('/checklist')).to_not be_routable }
 end

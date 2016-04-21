@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   has_one :checklist
 
+  after_create :create_checklist
+
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
 

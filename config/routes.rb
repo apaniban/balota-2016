@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :checklists
+  resource :checklist, only: [:show, :edit, :update]
 
   namespace :admin do
     root 'parties#index'
