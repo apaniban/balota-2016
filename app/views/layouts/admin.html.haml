@@ -10,7 +10,7 @@
     .container-fluid
       .row
         .col-md-2
-          = render 'shared/admin/sidebar'
+          = render 'shared/admin/sidebar' if admin_signed_in?
         .col-md-10
           = yield
 
