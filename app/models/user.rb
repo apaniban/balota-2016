@@ -7,12 +7,15 @@ class User < ActiveRecord::Base
 
   has_one :checklist
 
+  validates :username, presence: true, uniqueness: { case_sensitive: false }
+
   after_create :create_checklist
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
 
     if conditions.has_key?(:username)
+      conditions[:username].downcase! if condition[:username]
       where(conditions.to_hash).first
     end
   end

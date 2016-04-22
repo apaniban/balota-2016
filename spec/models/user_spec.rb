@@ -5,6 +5,11 @@ RSpec.describe User, type: :model do
     it { should have_one :checklist }
   end
 
+  context 'validations' do
+    it { should validate_presence_of(:username) }
+    it { should validate_uniqueness_of(:username).case_insensitive }
+  end
+
   context 'callbacks' do
     it 'creates blank checklist after user creation' do
       user = FactoryGirl.build(:user)
