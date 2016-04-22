@@ -15,8 +15,8 @@ class User < ActiveRecord::Base
     conditions = warden_conditions.dup
 
     if conditions.has_key?(:username)
-      conditions[:username].downcase! if condition[:username]
-      where(conditions.to_hash).first
+      conditions[:username].downcase!
+      where(["lower(username) = lower(:value)", { value: conditions[:username] }]).first
     end
   end
 end
