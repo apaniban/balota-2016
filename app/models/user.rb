@@ -5,9 +5,11 @@ class User < ActiveRecord::Base
          :rememberable, :trackable,
          authentication_keys: [:username]
 
+  devise :omniauthable, omniauth_providers: [:facebook]
+
   has_one :checklist
 
-  validates :username, presence: true, uniqueness: { case_sensitive: false }
+  validates :username, uniqueness: { case_sensitive: false }
 
   after_create :create_checklist
 
@@ -17,6 +19,13 @@ class User < ActiveRecord::Base
     if conditions.has_key?(:username)
       conditions[:username].downcase!
       where(["lower(username) = lower(:value)", { value: conditions[:username] }]).first
+    end
+  end
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.password = Devise.friendly_token[0,20]
+      user.name = auth.info.name
     end
   end
 end

@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
     if user_signed_in?
-      redirect_to checklist_path and return
+      redirect_to edit_checklist_path and return
     end
   end
 end
