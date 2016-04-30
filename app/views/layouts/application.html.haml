@@ -5,10 +5,9 @@
     %title Balota 2016
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+    %link{:href => "https://fonts.googleapis.com/css?family=Roboto:400,500,700", :rel => "stylesheet", :type => "text/css"}/
   %body
-    = render 'shared/navbar'
-    .container-fluid
-      .row
-        = yield
+    -# = render 'shared/navbar'
+    = yield
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true

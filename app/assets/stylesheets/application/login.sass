@@ -1,0 +1,107 @@
+.loginWrapper
+  width: 100%
+  max-width: 840px
+  padding-top: 90px
+  margin: 0 auto
+  @media only screen and (max-width: 951px)
+    padding-top: 0
+
+  .loginLeftContent
+    font-size: 13px
+    color: #B2B2B2
+    text-align: center
+    max-width: 405px
+    padding: 100px 0
+    margin: 0 auto
+    @media only screen and (max-width: 951px)
+      padding: 30px 30px
+    .logo
+      background-image: image-url("logo_login.png")
+      background-repeat: no-repeat
+      background-size: contain
+      width: 252px
+      height: 40px
+      margin: 0 auto 20px
+
+  .loginRightContent
+    background: #ffffff
+    border: 1px solid #F1F1F1
+    box-shadow: 0 0 20px 0 rgba(#000, 0.03)
+    padding: 50px
+    position: relative
+    max-width: 405px
+    margin: 0 auto
+
+  input
+    border: none
+    box-shadow: none
+    border-radius: 0
+    border-bottom: 1px solid #E9E9E9
+    height: 50px
+    font-size: 16px
+    &:focus
+      border: none
+      box-shadow: none
+      border-bottom: 1px solid #333333
+    &::-webkit-input-placeholder
+      color: #989A9F
+    &:-moz-placeholder
+      color: #989A9F
+    &::-moz-placeholder
+      color: #989A9F
+    &:-ms-input-placeholder
+      color: #989A9F
+    &[type="checkbox"]
+      height: auto
+
+  label[for="user_remember_me"]
+    color: #B9BABD
+    font-size: 12px
+    font-weight: 500
+
+  .buttons
+    margin-top: 35px
+    text-align: right
+    a
+      color: #333333
+      font-size: 14px
+      font-weight: 500
+      text-transform: uppercase
+      margin: 0 20px
+
+  .btn
+    padding: 15px 25px 17px
+    border-radius: 5px
+    background: #333333
+    font-size: 14px
+    font-weight: 500
+    text-transform: uppercase
+    color: #ffffff
+    &:hover
+      background: #222
+    &.fbLogin
+      width: 100%
+      background: #6984C5
+      &:hover
+        background: #5C76B6
+
+  .lineSeparator
+    height: 1px
+    width: 100%
+    background: #E9E9E9
+    margin-top: 25px
+    margin-bottom: 30px
+    position: relative
+
+  .or
+    position: absolute
+    width: 24px
+    height: 24px
+    left: 50%
+    bottom: 50%
+    margin-left: -12px
+    margin-bottom: -12px
+    background: #ffffff
+    text-align: center
+    font-style: italic
+    color: #BBBBBB

@@ -1,27 +1,31 @@
-.container-fluid
+.loginWrapper
   .row
-    .col-sm-4.col-sm-offset-3
-      .content-containers
-        .container-head
-          %span.text-center Login
-        .container-body
-          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .col-md-6
+      .loginLeftContent
+        .logo
+        %p While it was just a TV show, that little speech at the beginning of the original Star Trek show really did do a good job of capturing our feelings about space. It is those feelings that drive our love of astronomy and our desire to learn more and more about it.
+    .col-md-6
+      .loginRightContent
+        .topBorder.red
+        .topBorder.blue
+        .topBorder.yellow
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+
+          .form-group
+            = f.text_field :username, autofocus: true, placeholder: 'Username', class: 'form-control'
+          .form-group
+            = f.password_field :password, autocomplete: "off", placeholder: 'Password', class: 'form-control'
+          - if devise_mapping.rememberable?
             .form-group
-              = f.text_field :username, autofocus: true, placeholder: 'Username', class: 'form-control'
+              = f.check_box :remember_me
+              = f.label :remember_me
+          .form-group.buttons
+            = link_to "Register", new_registration_path(resource_name)
+            = f.submit "Log in", class: 'btn'
 
-            .form-group
-              = f.password_field :password, autocomplete: "off", placeholder: 'Password', class: 'form-control'
+          .lineSeparator
+            .or or
 
-            - if devise_mapping.rememberable?
-              .form-group
-                = f.check_box :remember_me
-                = f.label :remember_me
-
-            .form-group
-              = f.submit "Log in", class: 'btn btn-primary form-control'
-
-          = link_to "Register", new_registration_path(resource_name)
-
-          - if devise_mapping.omniauthable?
-            - resource_class.omniauth_providers.each do |provider|
-              = link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider)
+        - if devise_mapping.omniauthable?
+          - resource_class.omniauth_providers.each do |provider|
+            = link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), :class => "btn fbLogin"

@@ -1,1 +1,35 @@
 @import 'bootstrap'
+
+html, body
+  height: 100%
+
+html
+  text-rendering: optimizeLegibility !important
+  -webkit-font-smoothing: antialiased !important
+
+body
+  background: #fafafa
+  font-family: 'Roboto', sans-serif
+
+.contentContainer
+  background: #ffffff
+
+.topBorder
+  position: absolute
+  height: 3px
+  width: 33.33%
+  top: 0
+  &.blue
+    background: #4285F4
+    left: 0
+  &.red
+    background: #EA4335
+    left: 0
+    width: 100%
+  &.yellow
+    background: #FBBC05
+    right: 0
+
+@import 'navbar'
+@import 'login'
+@import 'checklist'
