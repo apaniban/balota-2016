@@ -5,4 +5,8 @@ class PartyList < ActiveRecord::Base
     numericality: { only_integer: true, greater_than: 0 }
 
   has_many :checklists
+
+  def name_with_ballot_number
+    "#{ballot_number}: #{name}"
+  end
 end

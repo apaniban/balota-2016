@@ -6,4 +6,8 @@ class VicePresident < ActiveRecord::Base
 
   belongs_to :party
   has_many :checklists
+
+  def name_with_ballot_number
+    "#{ballot_number}: #{ballot_name}"
+  end
 end

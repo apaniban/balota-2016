@@ -1,11 +1,29 @@
-%h2 President: #{@checklist.president.ballot_name}
-%h2 Vice President: #{@checklist.vice_president.ballot_name}
+%h2 President:
+- if @checklist.president.present?
+  %span #{@checklist.president.ballot_number}
+  %span #{@checklist.president.ballot_name}
+- else
+  %span Undecided
+
+%h2 Vice President:
+- if @checklist.vice_president.present?
+  %span #{@checklist.vice_president.ballot_number}
+  %span #{@checklist.vice_president.ballot_name}
+- else
+  %span Undecided
+
 
 %h3 Senators
 - @checklist.senators.each do |senator|
-  #{senator.ballot_name}
+  %span #{senator.ballot_number}
+  %span #{senator.ballot_name}
 
-%h3 Partylist: #{@checklist.party_list.name}
+%h3 Partylist:
+- if @checklist.party_list.present?
+  %span #{@checklist.party_list.ballot_number}
+  %span #{@checklist.party_list.name}
+- else
+  %span Undecided
 
 = link_to 'Print checklist', print_checklist_path, target: '_blank'
 = link_to 'Download as Pdf', download_checklist_path(format: :pdf), target: '_blank'

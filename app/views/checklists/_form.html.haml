@@ -3,25 +3,25 @@
     .positionCategory
       = f.label :president_id, 'President'
       %span Vote for 1
-    = f.collection_radio_buttons :president_id, @presidents, :id, :name, item_wrapper_tag: :div, item_wrapper_class: 'candidateOption'
+    = f.collection_radio_buttons :president_id, @presidents, :id, :name_with_ballot_number, item_wrapper_tag: :div, item_wrapper_class: 'candidateOption'
 
   .form-group
     .positionCategory
       = f.label :vice_president_id, 'Vice President'
       %span Vote for 1
-    = f.collection_radio_buttons :vice_president_id, @vice_presidents, :id, :name, item_wrapper_tag: :div, item_wrapper_class: 'candidateOption'
+    = f.collection_radio_buttons :vice_president_id, @vice_presidents, :id, :name_with_ballot_number, item_wrapper_tag: :div, item_wrapper_class: 'candidateOption'
 
   .form-group
     .positionCategory
       = f.label :senator_ids, 'Senators'
       -# %span Vote for 1
-    = f.collection_check_boxes :senator_ids, @senators, :id, :name, item_wrapper_tag: :div, item_wrapper_class: 'candidateOption'
+    = f.collection_check_boxes :senator_ids, @senators, :id, :name_with_ballot_number, item_wrapper_tag: :div, item_wrapper_class: 'candidateOption'
 
   .form-group
     .positionCategory
       = f.label :party_list_id, 'Party List'
       %span Vote for 1
-    = f.collection_radio_buttons :party_list_id, @party_lists, :id, :name, item_wrapper_tag: :div, item_wrapper_class: 'candidateOption'
+    = f.collection_radio_buttons :party_list_id, @party_lists, :id, :name_with_ballot_number, item_wrapper_tag: :div, item_wrapper_class: 'candidateOption'
 
   .form-group
     = f.submit 'Save checklist', class: 'btn btn-primary form-control'
