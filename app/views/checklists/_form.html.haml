@@ -14,8 +14,9 @@
   .form-group
     .positionCategory
       = f.label :senator_ids, 'Senators'
-      -# %span Vote for 1
-    = f.collection_check_boxes :senator_ids, @senators, :id, :name_with_ballot_number, item_wrapper_tag: :div, item_wrapper_class: 'candidateOption'
+      %span Vote for 12
+    = f.collection_check_boxes :senator_ids, @senators, :id, :name_with_ballot_number, item_wrapper_tag: :div, item_wrapper_class: 'candidateOption',
+                               collection_wrapper_class: 'limitedCheckbox'
 
   .form-group
     .positionCategory
