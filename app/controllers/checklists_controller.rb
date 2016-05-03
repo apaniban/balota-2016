@@ -19,6 +19,22 @@ class ChecklistsController < ApplicationController
     end
   end
 
+  def download
+    @checklist = current_user.checklist
+
+    respond_to do |format|
+      format.pdf do
+        pdf = ChecklistPdf.new(@checklist, view_context)
+        send_data pdf.render, filename: 'mychecklist.pdf', type: 'application/pdf'
+      end
+    end
+
+  end
+
+  def print
+    @checklist = current_user.checklist
+  end
+
   private
     def set_collection_values
       @presidents = President.all

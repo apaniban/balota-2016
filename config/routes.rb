@@ -5,7 +5,12 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resource :checklist, only: [:show, :edit, :update]
+  resource :checklist, only: [:show, :edit, :update] do
+    member do
+      get 'download'
+      get 'print'
+    end
+  end
 
   namespace :admin do
     root 'parties#index'

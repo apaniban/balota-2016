@@ -14,6 +14,7 @@ gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'figaro'
 gem 'simple_form'
+gem 'prawn'
 
 gem 'devise'
 gem 'omniauth-facebook'
