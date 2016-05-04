@@ -4,6 +4,6 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def after_sign_in_path_for(resource_or_scope)
-    edit_checklist_path
+    checklist_path
   end
 end
