@@ -15,10 +15,32 @@
   .candidateOption
     padding-bottom: 15px
     position: relative
-    input[type="radio"]
-      float: left
-      margin-right: 10px
+    input[type="radio"], input[type="checkbox"]
+      display: none
     label
       padding-bottom: 15px
       border-bottom: 1px solid #F1F1F1
       display: inline-block
+    label:before
+      content: ""
+      display: inline-block
+      width: 20px
+      height: 20px
+      margin-right: 10px
+      position: static
+      background-color: #fff
+      border: 1px solid #D5D7DC
+      border-radius: 10px
+      transition: all 0.2s ease
+    input[type="radio"]:checked + label, input[type="checkbox"]:checked + label
+      color: #71BBF2
+    input[type="radio"]:checked + label:before, input[type="checkbox"]:checked + label:before
+      color: #fff
+      background-image: image-url("check.png")
+      background-color: #71BBF2
+      background-repeat: no-repeat
+      background-size: 10px
+      background-position: center center
+      border: 1px solid #71BBF2
+      transition: background-color 0.2s ease-in-out
+      transition: border 0.2s ease-in-out
