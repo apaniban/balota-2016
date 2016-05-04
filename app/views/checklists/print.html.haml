@@ -1,29 +1,72 @@
-%h2 President:
-- if @checklist.president.present?
-  %span #{@checklist.president.ballot_number}
-  %span #{@checklist.president.ballot_name}
-- else
-  %span Undecided
+.mainWrapper
+  .checklistContainer.print
+    .logo
+    .form-group
+      .positionCategory
+        %label My President
+      .row
+        - if @checklist.president.present?
+          .col-sm-12
+            .candidateOption
+              .underLine
+              .radioButton
+              %span.selectedCandidate #{@checklist.president.ballot_number}.
+              %span.selectedCandidate #{@checklist.president.ballot_name}
+        - else
+          .col-sm-12
+            .candidateOption
+              .underLine
+              .radioButton.undecided
+              %span.undecided Undecided
 
-%h2 Vice President:
-- if @checklist.vice_president.present?
-  %span #{@checklist.vice_president.ballot_number}
-  %span #{@checklist.vice_president.ballot_name}
-- else
-  %span Undecided
+    .form-group
+      .positionCategory
+        %label My Vice President
+      .row
+        - if @checklist.vice_president.present?
+          .col-sm-12
+            .candidateOption
+              .underLine
+              .radioButton
+              %span.selectedCandidate #{@checklist.vice_president.ballot_number}.
+              %span.selectedCandidate #{@checklist.vice_president.ballot_name}
+        - else
+          .col-sm-12
+            .candidateOption
+              .underLine
+              .radioButton.undecided
+              %span.undecided Undecided
 
 
-%h3 Senators
-- @checklist.senators.each do |senator|
-  %span #{senator.ballot_number}
-  %span #{senator.ballot_name}
+    .form-group
+      .positionCategory
+        %label My Senators
+      .row
+        - @checklist.senators.each do |senator|
+          .col-sm-6.col-md-4
+            .candidateOption
+              .underLine
+              .radioButton
+              %span.selectedCandidate #{senator.ballot_number}
+              %span.selectedCandidate #{senator.ballot_name}
 
-%h3 Partylist:
-- if @checklist.party_list.present?
-  %span #{@checklist.party_list.ballot_number}
-  %span #{@checklist.party_list.name}
-- else
-  %span Undecided
+    .form-group
+      .positionCategory
+        %label My Party List
+      .row
+        - if @checklist.party_list.present?
+          .col-sm-12
+            .candidateOption
+              .underLine
+              .radioButton
+              %span.selectedCandidate #{@checklist.party_list.ballot_number}
+              %span.selectedCandidate #{@checklist.party_list.name}
+        - else
+          .col-sm-12
+            .candidateOption
+              .underLine
+              .radioButton.undecided
+              %span.undecided Undecided
 
 :javascript
   //uncomment if print page design is ready :)
