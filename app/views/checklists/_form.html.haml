@@ -3,37 +3,49 @@
     .positionCategory
       = f.label :president_id, 'President'
       %span Vote for 1
-    = f.collection_radio_buttons :president_id, @presidents, :id, :name_with_ballot_number do |b|
-      .candidateOption
-        = b.radio_button
-        = b.label
+    .row
+      = f.collection_radio_buttons :president_id, @presidents, :id, :name_with_ballot_number do |b|
+        .col-sm-6.col-md-4
+          .candidateOption
+            .underLine
+            = b.radio_button
+            = b.label
 
   .form-group
     .positionCategory
       = f.label :vice_president_id, 'Vice President'
       %span Vote for 1
-    = f.collection_radio_buttons :vice_president_id, @vice_presidents, :id, :name_with_ballot_number do |b|
-      .candidateOption
-        = b.radio_button
-        = b.label
+    .row
+      = f.collection_radio_buttons :vice_president_id, @vice_presidents, :id, :name_with_ballot_number do |b|
+        .col-sm-6.col-md-4
+          .candidateOption
+            .underLine
+            = b.radio_button
+            = b.label
 
   .form-group
     .positionCategory
       = f.label :senator_ids, 'Senators'
       %span Vote for 12
-    = f.collection_check_boxes :senator_ids, @senators, :id, :name_with_ballot_number do |b|
-      .candidateOption
-        = b.check_box
-        = b.label
+    .row
+      = f.collection_check_boxes :senator_ids, @senators, :id, :name_with_ballot_number do |b|
+        .col-sm-6.col-md-4
+          .candidateOption
+            .underLine
+            = b.check_box
+            = b.label
 
   .form-group
     .positionCategory
       = f.label :party_list_id, 'Party List'
       %span Vote for 1
-    = f.collection_radio_buttons :party_list_id, @party_lists, :id, :name_with_ballot_number do |b|
-      .candidateOption
-        = b.radio_button
-        = b.label
+    .row
+      = f.collection_radio_buttons :party_list_id, @party_lists, :id, :name_with_ballot_number do |b|
+        .col-sm-6.col-md-4
+          .candidateOption.partyList
+            .underLine
+            = b.radio_button
+            = b.label
 
   .form-group
     = f.submit 'Save checklist', class: 'btn btn-primary form-control'

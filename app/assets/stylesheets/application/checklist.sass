@@ -7,20 +7,35 @@
   .positionCategory
     font-size: 18px
     font-weight: 500
-    margin-bottom: 35px
+    margin-bottom: 15px
     span
       font-size: 14px
       color: #A9A9A9
 
   .candidateOption
     padding-bottom: 15px
+    margin-bottom: 15px
     position: relative
+    &.partyList
+      height: 70px
+    .underLine
+      position: absolute
+      border-bottom: 1px solid #F1F1F1
+      bottom: 0
+      left: 30px
+      right: 0
+      height: 1px
     input[type="radio"], input[type="checkbox"]
       display: none
     label
-      padding-bottom: 15px
-      border-bottom: 1px solid #F1F1F1
       display: inline-block
+      font-weight: 400
+      font-size: 13px
+      vertical-align: middle
+      cursor: pointer
+      // IDENTED 2ND LINE
+      padding-left: 30px
+      text-indent: -30px
     label:before
       content: ""
       display: inline-block
@@ -31,9 +46,12 @@
       background-color: #fff
       border: 1px solid #D5D7DC
       border-radius: 10px
+      vertical-align: middle
       transition: all 0.2s ease
     input[type="radio"]:checked + label, input[type="checkbox"]:checked + label
       color: #71BBF2
+      font-weight: 500
+      transition: all 0.3s ease
     input[type="radio"]:checked + label:before, input[type="checkbox"]:checked + label:before
       color: #fff
       background-image: image-url("check.png")
