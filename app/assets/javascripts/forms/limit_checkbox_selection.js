@@ -8,7 +8,6 @@ forms.limit_checkbox_selection = (function() {
 
   var limit_checkbox = function() {
     $(checkbox).on('change', function(e) {
-      console.log($(checkbox + ':checked').length);
       if ($(checkbox + ':checked').length > limit) {
         this.checked = false;
       }
