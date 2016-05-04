@@ -31,6 +31,9 @@
     position: relative
     max-width: 405px
     margin: 0 auto
+    h1
+      font-size: 20px
+      margin: 0 0 30px
 
   input[type="text"], input[type="password"]
     border: none
@@ -39,6 +42,8 @@
     border-bottom: 1px solid #E9E9E9
     height: 50px
     font-size: 16px
+    padding-left: 0
+    padding-right: 0
     &:focus
       border: none
       box-shadow: none
@@ -75,6 +80,14 @@
       background: #6984C5
       &:hover
         background: #5C76B6
+    &.loginBtn
+      width: 100%
+      background: #CBCCCE
+      text-align: center
+      color: #fff
+      margin-bottom: 10px
+    &.registerBtn
+      width: 100%
 
   .lineSeparator
     height: 1px
@@ -112,3 +125,12 @@
     &.yellow
       background: #FBBC05
       right: 0
+
+  #error_explanation
+    background: #FFEFC4
+    padding: 10px
+    margin-bottom: 20px
+    border-radius: 4px
+    h2
+      margin: 0 0 10px
+      font-size: 15px
