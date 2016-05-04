@@ -2,7 +2,7 @@
   background: #ffffff
   border-left: 1px solid #F1F1F1
   border-right: 1px solid #F1F1F1
-  padding: 35px
+  padding: 146px 35px 35px
 
   .positionCategory
     font-size: 18px
@@ -36,7 +36,7 @@
       // IDENTED 2ND LINE
       padding-left: 30px
       text-indent: -30px
-    label:before
+    label:before, .radioButton
       content: ""
       display: inline-block
       width: 20px
@@ -48,12 +48,12 @@
       border-radius: 10px
       vertical-align: middle
       transition: all 0.2s ease
-    input[type="radio"]:checked + label, input[type="checkbox"]:checked + label
+    input[type="radio"]:checked + label, input[type="checkbox"]:checked + label, .selectedCandidate
       color: #71BBF2
       font-weight: 500
-      transition: all 0.3s ease
-    input[type="radio"]:checked + label:before, input[type="checkbox"]:checked + label:before
-      color: #fff
+      font-size: 13px
+      transition: color 0.3s ease
+    input[type="radio"]:checked + label:before, input[type="checkbox"]:checked + label:before, .radioButton
       background-image: image-url("check.png")
       background-color: #71BBF2
       background-repeat: no-repeat
@@ -62,3 +62,10 @@
       border: 1px solid #71BBF2
       transition: background-color 0.2s ease-in-out
       transition: border 0.2s ease-in-out
+    .radioButton.undecided
+      background-image: none
+      background: #DBDEE2
+      border-color: #DBDEE2
+    span.undecided
+      color: #A1A5AB
+      font-weight: 500
