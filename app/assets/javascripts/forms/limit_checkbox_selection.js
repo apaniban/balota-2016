@@ -12,7 +12,11 @@ forms.limit_checkbox_selection = (function() {
         this.checked = false;
       } else {
         var count = parseInt($('.votesLeftCount').text());
-        $('.votesLeftCount').text(--count);
+        if ($(this).is(':checked')) {
+          $('.votesLeftCount').text(--count);
+        } else {
+          $('.votesLeftCount').text(++count);
+        }
       }
     });
   };
