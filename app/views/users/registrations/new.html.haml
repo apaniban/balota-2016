@@ -24,7 +24,6 @@
           .form-group
             = f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Confirm Password', class: 'form-control'
           .form-group.buttons
-            -# = link_to "Log in", new_session_path(resource_name)
             = f.submit "Sign up", class: 'btn registerBtn'
           .lineSeparator
             .or or
