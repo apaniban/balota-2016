@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   has_one :checklist
 
-  validates :username, uniqueness: { case_sensitive: false }
+  validates :username, uniqueness: { case_sensitive: false }, if: Proc.new { |user| user.username.present? }
 
   after_create :create_checklist
 
