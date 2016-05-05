@@ -7,6 +7,7 @@ class ChecklistsController < ApplicationController
 
   def edit
     @checklist = current_user.checklist
+    @senators_count_left = 12 - @checklist.senators.count
   end
 
   def update

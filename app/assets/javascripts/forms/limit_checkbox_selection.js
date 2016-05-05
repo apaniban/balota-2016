@@ -10,6 +10,9 @@ forms.limit_checkbox_selection = (function() {
     $(checkbox).on('change', function(e) {
       if ($(checkbox + ':checked').length > limit) {
         this.checked = false;
+      } else {
+        var count = parseInt($('.votesLeftCount').text());
+        $('.votesLeftCount').text(--count);
       }
     });
   };

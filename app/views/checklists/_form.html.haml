@@ -27,7 +27,9 @@
     .positionCategory
       = f.label :senator_ids, 'Senators'
       %span Vote for 12
-      %span.votesLeft (5 more)
+      %span.votesLeft (
+      %span.votesLeftCount #{@senators_count_left}
+      %span.votesLeft more )
     .row
       = f.collection_check_boxes :senator_ids, @senators, :id, :name_with_ballot_number do |b|
         .col-sm-6.col-md-4
