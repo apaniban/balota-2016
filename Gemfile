@@ -43,11 +43,12 @@ group :development do
   #gem 'spring'
 
   gem 'meta_request'
+
+  #Deployment gems
   gem 'capistrano'
-  gem 'capistrano-rvm'
-  gem 'capistrano-rails'
   gem 'capistrano-bundler'
-  gem 'capistrano3-puma'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-rails'
 end
 
 group :test do
