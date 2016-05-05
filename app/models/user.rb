@@ -10,11 +10,15 @@ class User < ActiveRecord::Base
   has_one :checklist
 
   validates :username, uniqueness: { case_sensitive: false }, if: Proc.new { |user| user.username.present? }
-  validates :username, presence: true, if: Proc.new { |user| user.provider.blank? && user.uid.blank? }
-  validates :password, presence: true, if: Proc.new { |user| user.provider.blank? && user.uid.blank? }
-  validates_confirmation_of :password, if: Proc.new { |user| user.provider.blank? && user.uid.blank? }
+  validates :username, presence: true, if: Proc.new { |user| !user.registered_using_omniauth? }
+  validates :password, presence: true, if: Proc.new { |user| !user.registered_using_omniauth? }
+  validates_confirmation_of :password, if: Proc.new { |user| !user.registered_using_omniauth? }
 
   after_create :create_checklist
+
+  def registered_using_omniauth?
+    self.provider.present? && self.uid.present?
+  end
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
