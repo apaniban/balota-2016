@@ -8,6 +8,6 @@ class Senator < ActiveRecord::Base
   has_and_belongs_to_many :checklists
 
   def name_with_ballot_number
-    "#{ballot_number}: #{ballot_name}"
+    "#{ballot_number}. #{ballot_name}"
   end
 end

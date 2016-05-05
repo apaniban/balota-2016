@@ -16,4 +16,10 @@ RSpec.describe VicePresident, type: :model do
     it { should belong_to :party }
     it { should have_many :checklists }
   end
+
+  describe '#name_with_ballot_number' do
+    let!(:vice_president) { FactoryGirl.create(:vice_president) }
+
+    it { expect(vice_president.name_with_ballot_number).to eq "#{vice_president.ballot_number}. #{vice_president.ballot_name}" }
+  end
 end

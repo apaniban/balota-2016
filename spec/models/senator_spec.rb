@@ -16,4 +16,10 @@ RSpec.describe Senator, type: :model do
     it { should belong_to :party }
     it { should have_and_belong_to_many :checklists }
   end
+
+  describe '#name_with_ballot_number' do
+    let!(:senator) { FactoryGirl.create(:senator) }
+
+    it { expect(senator.name_with_ballot_number).to eq "#{senator.ballot_number}. #{senator.ballot_name}" }
+  end
 end

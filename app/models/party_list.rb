@@ -7,6 +7,6 @@ class PartyList < ActiveRecord::Base
   has_many :checklists
 
   def name_with_ballot_number
-    "#{ballot_number}: #{name}"
+    "#{ballot_number}. #{name}"
   end
 end

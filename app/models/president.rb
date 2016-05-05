@@ -8,6 +8,6 @@ class President < ActiveRecord::Base
   has_many :checklists
 
   def name_with_ballot_number
-    "#{ballot_number}: #{ballot_name}"
+    "#{ballot_number}. #{ballot_name}"
   end
 end

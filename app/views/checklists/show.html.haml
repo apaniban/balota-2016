@@ -10,8 +10,7 @@
             .candidateOption
               .underLine
               .radioButton
-              %span.selectedCandidate #{@checklist.president.ballot_number}
-              %span.selectedCandidate #{@checklist.president.ballot_name}
+              %span.selectedCandidate #{@checklist.president.name_with_ballot_number}
         - else
           .col-sm-12
             .candidateOption
@@ -28,8 +27,7 @@
             .candidateOption
               .underLine
               .radioButton
-              %span.selectedCandidate #{@checklist.vice_president.ballot_number}
-              %span.selectedCandidate #{@checklist.vice_president.ballot_name}
+              %span.selectedCandidate #{@checklist.vice_president.name_with_ballot_number}
         - else
           .col-sm-12
             .candidateOption
@@ -42,13 +40,19 @@
       .positionCategory
         %label Senators
       .row
-        - @checklist.senators.each do |senator|
-          .col-sm-6.col-md-4
+        - if @checklist.senators.present?
+          - @checklist.senators.each do |senator|
+            .col-sm-6.col-md-4
+              .candidateOption
+                .underLine
+                .radioButton
+                %span.selectedCandidate #{senator.name_with_ballot_number}
+        - else
+          .col-sm-12
             .candidateOption
               .underLine
-              .radioButton
-              %span.selectedCandidate #{senator.ballot_number}
-              %span.selectedCandidate #{senator.ballot_name}
+              .radioButton.undecided
+              %span.undecided Undecided
 
     .form-group
       .positionCategory
@@ -59,8 +63,7 @@
             .candidateOption
               .underLine
               .radioButton
-              %span.selectedCandidate #{@checklist.party_list.ballot_number}
-              %span.selectedCandidate #{@checklist.party_list.name}
+              %span.selectedCandidate #{@checklist.party_list.name_with_ballot_number}
         - else
           .col-sm-12
             .candidateOption
