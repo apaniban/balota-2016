@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   has_one :checklist
 
   validates :username, uniqueness: { case_sensitive: false }, if: Proc.new { |user| user.username.present? }
+  validates :username, presence: true, if: Proc.new { |user| user.provider.blank? && user.uid.blank? }
+  validates :password, presence: true, if: Proc.new { |user| user.provider.blank? && user.uid.blank? }
+  validates_confirmation_of :password, if: Proc.new { |user| user.provider.blank? && user.uid.blank? }
 
   after_create :create_checklist
 
