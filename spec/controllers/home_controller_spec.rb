@@ -13,7 +13,7 @@ RSpec.describe HomeController, type: :controller do
 
       get :index
 
-      expect(response).to redirect_to(edit_checklist_path)
+      expect(response).to redirect_to(checklist_path)
     end
   end
 end
