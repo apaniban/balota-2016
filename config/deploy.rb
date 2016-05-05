@@ -37,6 +37,10 @@ set :repo_url, 'git@bitbucket.org:anibana/balota-2016-voters-checklist.git'
 
 set :deploy_to, '/home/deploy/balota2016'
 
+set :rbenv_path, '/home/deploy/.rbenv/'
+set :rbenv_type, :user
+set :rbenv_ruby, '2.2.3'
+
 set :linked_files, %w{config/database.yml config/secrets.yml config/application.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
