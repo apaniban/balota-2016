@@ -41,6 +41,8 @@ set :linked_files, %w{config/database.yml config/secrets.yml config/application.
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 #set :rbenv_ruby, '2.2.3'
 
+set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
+
 namespace :deploy do
   desc 'Restart application'
   task :restart do
