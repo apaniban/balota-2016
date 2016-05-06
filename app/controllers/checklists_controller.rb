@@ -45,6 +45,12 @@ class ChecklistsController < ApplicationController
     end
 
     def checklist_params
-      params.require(:checklist).permit(:president_id, :vice_president_id, :party_list_id, senator_ids: [])
+      cp = params.require(:checklist).permit(:president_id, :vice_president_id, :party_list_id, senator_ids: [])
+
+      default_checklist_params.merge(cp)
+    end
+
+    def default_checklist_params
+      {president_id: nil, vice_president_id: nil, party_list_id: nil}
     end
 end
