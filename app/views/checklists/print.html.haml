@@ -1,6 +1,7 @@
 .mainWrapper
   .checklistContainer.print
     .logo
+      = image_tag "logo_login.png", width: '252px', height: '40px', align: 'middle'
     .form-group
       .positionCategory
         %label My President
@@ -42,7 +43,7 @@
       .row
         - if @checklist.senators.present?
           - @checklist.senators.each do |senator|
-            .col-sm-6.col-md-4
+            .col-xs-6.col-sm-6.col-md-6
               .candidateOption
                 .underLine
                 .radioButton

@@ -78,9 +78,12 @@
 .checklistContainer.print
   padding: 35px
   .logo
-    background-image: image-url("logo_login.png")
-    background-repeat: no-repeat
-    background-size: contain
     width: 252px
     height: 40px
     margin: 0 auto 35px
+
+@media print
+  .checklistContainer.print
+    .candidateOption
+      .radioButton
+        border: 1px solid
