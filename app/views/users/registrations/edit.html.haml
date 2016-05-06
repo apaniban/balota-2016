@@ -3,10 +3,10 @@
   .loginWrapper
     .row
       .col-md-7.col-md-offset-2
-        .loginRightContent
-          .topBorder.red
-          .topBorder.blue
-          .topBorder.yellow
+        .loginRightContent.edit
+          -# .topBorder.red
+          -# .topBorder.blue
+          -# .topBorder.yellow
           %h1 Edit My Password
           = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
             = devise_error_messages!
