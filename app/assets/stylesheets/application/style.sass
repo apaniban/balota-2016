@@ -71,6 +71,8 @@ body
       font-weight: 500
       margin-right: 5px
       margin-bottom: 5px
+      &:focus
+        background: #3775D6
       &:before
         content: ""
         display: inline-block
@@ -104,6 +106,9 @@ body
           display: inline
           height: 35px
           padding-right: 12px
+          &:focus, &:active
+            box-shadow: none
+            outline: none
 
 @import 'navbar'
 @import 'login'
