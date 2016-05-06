@@ -58,7 +58,7 @@ body
     border-bottom: 1px solid #F1F1F1
     padding: 15px 15px 10px
     font-size: 0
-    a, input[type="submit"]
+    a
       display: inline-block
       border: none
       text-decoration: none
@@ -71,6 +71,39 @@ body
       font-weight: 500
       margin-right: 5px
       margin-bottom: 5px
+      &:before
+        content: ""
+        display: inline-block
+        height: 14px
+        width: 14px
+        vertical-align: middle
+        margin-right: 8px
+      &.editList
+        &:before
+          background: image-url("icon_edit.png") no-repeat
+          background-size: contain
+      &.printList
+        &:before
+          background: image-url("icon_print.png") no-repeat
+          background-size: contain
+      &.downloadList
+        &:before
+          background: image-url("icon_download.png") no-repeat
+          background-size: contain
+      &.saveList
+        padding: 0 0 0 12px
+        &:before
+          background: image-url("icon_save.png") no-repeat
+          background-size: contain
+          margin-right: 4px
+        input[type="submit"]
+          background-color: transparent
+          text-transform: uppercase
+          font-size: 11px
+          border: none
+          display: inline
+          height: 35px
+          padding-right: 12px
 
 @import 'navbar'
 @import 'login'
