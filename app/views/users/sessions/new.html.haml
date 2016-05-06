@@ -12,6 +12,10 @@
         .topBorder.blue
         .topBorder.yellow
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          - if flash[:alert].present?
+            #error_explanation
+              %ul
+                %li= flash[:alert]
 
           .form-group
             = f.text_field :username, autofocus: true, placeholder: 'Username', class: 'form-control'
