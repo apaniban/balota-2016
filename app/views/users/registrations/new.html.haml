@@ -36,9 +36,6 @@
         %p Note: We won't be collecting any sensitive data. This web app will simply help you create your list.
     .col-md-6
       .loginRightContent
-        .topBorder.red
-        .topBorder.blue
-        .topBorder.yellow
         = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
           = devise_error_messages!
           %h1 SIGN UP
