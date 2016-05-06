@@ -24,12 +24,12 @@ class ChecklistPdf < Prawn::Document
   def print_president
     print_position { text "My President" }
     pad_bottom(20) {
-      print_candidate do
-        if @checklist.president.present?
+      if @checklist.president.present?
+        print_candidate do
           text "#{@checklist.president.name_with_ballot_number}"
-        else
-          print_undecided
         end
+      else
+        print_undecided
       end
     }
   end
@@ -39,12 +39,12 @@ class ChecklistPdf < Prawn::Document
     print_position { text "My Vice President" }
 
     pad_bottom(20) {
-      print_candidate do
-        if @checklist.vice_president.present?
+      if @checklist.vice_president.present?
+        print_candidate do
           text "#{@checklist.vice_president.name_with_ballot_number}"
-        else
-          print_undecided
         end
+      else
+        print_undecided
       end
     }
   end
@@ -73,12 +73,12 @@ class ChecklistPdf < Prawn::Document
     print_position { text "My Partylist" }
 
     pad_bottom(20) {
-      print_candidate do
-        if @checklist.party_list.present?
+      if @checklist.party_list.present?
+        print_candidate do
           text "#{@checklist.party_list.name_with_ballot_number}"
-        else
-          print_undecided
         end
+      else
+        print_undecided
       end
     }
   end
@@ -97,7 +97,7 @@ class ChecklistPdf < Prawn::Document
 
   def print_undecided
     bounding_box([30, self.cursor - 5], width: 300) do
-      font('Helvetica', style: :italic) { text 'Undecided' }
+      font('Helvetica', style: :italic) { text 'Undecided / Abstain' }
     end
   end
 end
