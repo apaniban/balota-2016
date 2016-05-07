@@ -1,8 +1,9 @@
 !!!
-%html
+%html{:xlmns => "http://www.w3.org/1999/xhtml", "xmlns:fb" => "http://ogp.me/ns/fb#"}
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:content => "width=device-width", :name => "viewport"}/
+    %meta{:content => "#{image_url 'fb-image.jpg'}", :property => "og:image"}/
     %title Balota 2016
     = stylesheet_link_tag    'application', media: 'all'
     = csrf_meta_tags
