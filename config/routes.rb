@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    root 'parties#index'
+    root 'home#index'
     resources :presidents
     resources :vice_presidents
     resources :parties
